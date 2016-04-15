@@ -1,6 +1,6 @@
 {
-  "appname": "XXXXX",
-  "ocscope": "BuyerReader",
-  "clientid": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX",
-  "buyerid": "XXXXX"
+  "appname": "Teddy Bikes",
+  "ocscope": "FullAccess",
+  "clientid": "7814B-77E4-4F97-A647-5CC5C3F0F77B",
+  "buyerid": ""
 }
