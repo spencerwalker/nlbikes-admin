@@ -17,23 +17,6 @@ function CategoryFacetsConfig( $stateProvider ) {
         controllerAs: 'facetedCat',
         data: {componentName: 'Category Facets'},
         resolve: {
-            CheckAccess: function($q, OrderCloud, toastr) {
-                var dfd = $q.defer();
-                OrderCloud.Me.Get()
-                    .then(function(user) {
-                       if(user.xp && user.xp.superAdmin) {
-                           dfd.resolve();
-                       }
-                        else {
-                           dfd.reject();
-                           toastr.warning("I'm sorry, it doesn't look like you have permission to access this page.", 'Warning:');
-                       }
-                    })
-                    .catch(function() {
-                        dfd.reject();
-                    });
-                return dfd.promise;
-            },
             CategoryList: function(OrderCloud) {
                 return OrderCloud.Categories.List(null, 'all');
             }
@@ -92,12 +75,12 @@ function FacetedCategoryManageController ( $state, Category, OrderCloud, toastr,
     };
 
 
-    vm.addValueExisting = function (facetName) {
+    vm.addValueExisting = function (facetName, index) {
         vm.category.xp.OC_Facets[facetName].Values.push(vm[facetName].newFacetValue.toLowerCase());
         OrderCloud.Categories.Update(vm.category.ID, vm.category)
             .then(function() {
                vm[facetName].newFacetValue = null;
-                $( "[id*="+facetName+"]").focus();
+                $('#newFacetValue' + index).focus();
             });
     };
 
