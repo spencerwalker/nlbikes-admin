@@ -169,4 +169,27 @@
     background: linear-gradient(to bottom, #413054 0%, #382948 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#413054', endColorstr='#382948', GradientType=0); /* IE6-9 */
   }
+
+  ul li ul {
+    background-color: lighten(@brand-primary, 5);
+    border-left: none;
+    border-radius: 0;
+
+    li {
+      margin-left: 5px !important;
+      margin-right: 5px !important;
+
+      ul {
+        border-left: 1px solid @gray-lighter;
+        margin-left: @padding-base-horizontal;
+      }
+    }
+  }
+
+  .facet-list-container {
+    h4 {
+      padding: @padding-base-horizontal @padding-base-horizontal 0;
+      background: transparent;
+    }
+  }
 }
