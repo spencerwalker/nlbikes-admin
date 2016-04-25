@@ -98,9 +98,22 @@ colgroup {
 }
 
 //Theme
-img {
-  width: 100%;
-  max-width: 100%;
+@import (less) url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,900,300,100);
+
+body {
+  background-color: @navbar-default-bg;
 }
 
-@import (less) url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,900,300,100);
+.btn {
+  -webkit-transition: background-color 0.15s ease-in-out;
+  -moz-transition: background-color 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.page-header {
+  border-bottom: 1px solid @gray;
+}
+
+.text-muted {
+  color: @gray;
+}
